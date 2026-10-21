@@ -4,18 +4,9 @@ title: Home
 ---
 <article>
     <h1> Hi, hola, 안녀하세요, мендвт</h1>
-  <p> I'm Benjamin Parkhurst [ˈbɛnd͡ʒəmɪn ˈpʰɑ˞k(h)ə˞st] and I'm currently a researcher at the <a href="https://wp.nyu.edu/appl/">Acoustic Phonetics and Perception Lab @ NYU</a>.</p>
+  <p> I'm Benjamin Parkhurst [ˈbɛnd͡ʒəmɪn ˈpʰɑ˞k(h)ə˞st], my pronouns are he/him, and I like sounds. I'm currently a researcher at the <a href="https://wp.nyu.edu/appl/">Acoustic Phonetics and Perception Lab @ NYU</a>.</p>
 </article>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active next" href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
-  {% endif %}
-</div>
+{% for post in paginator.posts %}
+  {% include featured-post.html %}
+{% endfor %}
